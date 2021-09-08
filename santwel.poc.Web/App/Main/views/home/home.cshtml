@@ -1,0 +1,33 @@
+﻿<div ng-controller="app.views.home as vm">
+    <h1>Welcome to our store!</h1>
+    <p class="lead">Available products!!!</p>
+    <div class="row">
+        <div class="col-md-4">
+            <h3> {{vm.products[0].name}}</h3>
+            <p>
+                {{vm.products[0].description}}
+            </p>
+            <label>Price: {{vm.products[0].unitPrice | currency}}</label>
+            <label>Availability: {{vm.products[0].qtyReserverdForSale}}</label>
+            <button class="btn btn-primary btn-sm" ng-click="vm.placeOrder(vm.products[0], 3)">Order 3 Items</button>
+        </div>
+        <div class="col-md-4">
+            <h3> {{vm.products[1].name}}</h3>
+            <p>
+                {{vm.products[1].description}}
+            </p>
+            <label>Price: {{vm.products[1].unitPrice | currency}}</label>
+            <label>Availability: {{vm.products[1].qtyReserverdForSale}}</label>
+            <button class="btn btn-primary btn-sm" ng-click="vm.placeOrder(vm.products[1], 2)" ng-disabled="vm.products[1].qtyReserverdForSale==0">Order 2 Items</button>
+        </div>
+        <div class="col-md-4">
+            <h3> {{vm.products[2].name}}</h3>
+            <p>
+                {{vm.products[2].description}}
+            </p>
+            <label>Price: {{vm.products[2].unitPrice | currency}}</label>
+            <label>Availability: {{vm.products[2].qtyReserverdForSale}}</label>
+            <button class="btn btn-primary btn-sm" ng-click="vm.placeOrder(vm.products[2], 5)" ng-disabled="vm.products[2].qtyReserverdForSale==0">Order 5 Items</button>
+        </div>
+    </div>
+</div>
